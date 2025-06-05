@@ -30,6 +30,16 @@ public class Program{
             Console.WriteLine("Finished Serialization to XML");
         }
 
-       
+        using( FileStream fs = new FileStream("person.json", FileMode.Create))
+        {
+            JsonSerializer.Serialize(fs, testPerson);
+            Console.WriteLine("Finished Serialization to JSON");
+        }
+        
+        // string jsonString = JsonSerializer.Serialize(samplePerson);
+
+        // File.WriteAllText("person.json", jsonString);
+
+        // Console.WriteLine("JSON serialization complete.");
     }
 }
